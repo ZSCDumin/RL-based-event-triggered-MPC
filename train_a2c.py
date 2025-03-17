@@ -41,9 +41,9 @@ args = parser.parse_args()
 device = torch.device('cuda', index=args.gpu_index) if torch.cuda.is_available() else torch.device('cpu')
 
 if args.algo == 'dqn':
-    from agents.dqn import Agent
+    from agents.a2c import Agent
 elif args.algo == 'ddqn': # Just replace the target of DQN with Double DQN
-    from agents.dqn import Agent
+    from agents.a2c import Agent
 elif args.algo == 'a2c':
     from agents.a2c import Agent
 
